@@ -1,20 +1,21 @@
 package main
 
 import (
-	"github.com/google/uuid"
 	"log"
+	"tinierFaaS/pkg/manager"
 )
+
+const PORT = ":8001"
+
+type server struct {
+	ms *manager.ManagerService
+}
 
 func main() {
 	log.SetPrefix("manager: ")
-	log.SetFlags(log.Lshortfile | log.Ltime)
+	log.SetFlags(log.Ltime | log.Lshortfile)
 
-	log.Printf("Manager started")
+	log.Printf("starting tinierFaaS-Manager...")
 
-	//Creating Backend
-
-	id := uuid.New().String()
-
-	var backend Backend
-	//Creating Reverse Proxy
+	// Execute rproxy.bin
 }
